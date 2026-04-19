@@ -1016,6 +1016,8 @@ body {
   .reviews-title { font-size: 26px; }
   .reviews-carousel { padding: 0 34px; }
   .reviews-pagination { gap: 10px; }
+  .carousel-btn { display: none; }
+  .rc-text { text-align: center; }
   .carousel-btn svg { width: 36px; height: 36px; }
 }
 
@@ -1932,6 +1934,25 @@ body {
     text-align: center;
   }
 
+  .reviews-block .carousel-btn {
+    display: none !important;
+  }
+
+  .review-card {
+    text-align: center;
+    align-items: center;
+  }
+
+  .rc-header,
+  .rc-stars {
+    justify-content: center;
+  }
+
+  .rc-info,
+  .rc-text {
+    text-align: center;
+  }
+
   .reviews-cta-text,
   .faq-cta-text {
     max-width: 30ch;
@@ -1953,6 +1974,7 @@ body {
   }
 
   .profile-body p {
+    text-align: center;
     max-width: 62ch;
   }
 
@@ -2083,8 +2105,8 @@ body {
   }
 
   .problems-headline {
-    font-size: 26px;
-    line-height: 1.15;
+    font-size: 30px;
+    line-height: 1.12;
   }
 
   .problems-body {
@@ -2123,10 +2145,7 @@ body {
     line-height: 1.45;
   }
 
-  .profile-body p {
-    text-align: center;
-    max-width: none;
-  }
+  .profile-body p { max-width: none; }
 
   .faq-title {
     font-size: 32px;
