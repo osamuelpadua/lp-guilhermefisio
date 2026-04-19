@@ -12,7 +12,7 @@
   --gradient:   linear-gradient(to right, #43B8B4, #1E5250);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 html {
   scrollbar-color: #43B8B4 rgba(30, 82, 80, 0.12);
@@ -275,7 +275,7 @@ body::-webkit-scrollbar-thumb:hover {
 /* ===== STAMP ANIMADO ===== */
 .stamp-wrapper {
   position: absolute;
-  top: 68px;
+  top: -36px;
   right: -24px;
   width: 162px;
   height: 162px;
@@ -656,7 +656,7 @@ body::-webkit-scrollbar-thumb:hover {
     height: 700px;
   }
 
-  .stamp-wrapper { width: 124px; height: 124px; top: 36px; right: -16px; }
+  .stamp-wrapper { width: 124px; height: 124px; top: -68px; right: -16px; }
   .stamp-txt    { width: 124px; height: 124px; }
   .stamp-iso    { width: 70px;  height: 70px; }
 }
