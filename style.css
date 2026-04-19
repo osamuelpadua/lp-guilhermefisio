@@ -749,7 +749,7 @@ body::-webkit-scrollbar-thumb:hover {
     transform: translateX(-50%);
   }
 
-  .stamp-wrapper { width: 86px; height: 86px; top: 180px; bottom: auto; right: 12px; }
+  .stamp-wrapper { width: 86px; height: 86px; top: 30px; bottom: auto; right: 12px; }
   .stamp-txt    { width: 86px; height: 86px; }
   .stamp-iso    { width: 48px; height: 48px; }
 
