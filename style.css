@@ -276,7 +276,7 @@ body::-webkit-scrollbar-thumb:hover {
 .stamp-wrapper {
   position: absolute;
   top: -36px;
-  right: -24px;
+  right: -60px;
   width: 162px;
   height: 162px;
   z-index: 3;
