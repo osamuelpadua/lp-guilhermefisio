@@ -186,10 +186,6 @@
   box-shadow: 0 6px 28px rgba(30, 82, 80, 0.28);
   position: relative;
   overflow: hidden;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
 }
 
 .lk-card--primary::after {
