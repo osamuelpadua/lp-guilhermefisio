@@ -708,7 +708,7 @@ body::-webkit-scrollbar-thumb:hover {
     height: 480px;
   }
 
-  .stamp-wrapper { top: 28px; right: 0; width: 110px; height: 110px; }
+  .stamp-wrapper { top: 220px; right: 16px; width: 110px; height: 110px; }
   .stamp-txt    { width: 110px; height: 110px; }
   .stamp-iso    { width: 62px; height: 62px; }
 }
@@ -749,7 +749,7 @@ body::-webkit-scrollbar-thumb:hover {
     transform: translateX(-50%);
   }
 
-  .stamp-wrapper { width: 86px; height: 86px; top: 590px; bottom: auto; right: 8px; }
+  .stamp-wrapper { width: 86px; height: 86px; top: 180px; bottom: auto; right: 12px; }
   .stamp-txt    { width: 86px; height: 86px; }
   .stamp-iso    { width: 48px; height: 48px; }
 
