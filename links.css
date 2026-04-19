@@ -50,6 +50,7 @@
   gap: 20px;
   opacity: 0;
   animation: lk-fadeDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+}
 
 .lk-logo {
   height: 72px;
