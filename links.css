@@ -50,6 +50,25 @@
   gap: 20px;
   opacity: 0;
   animation: lk-fadeDown 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards;
+  position: relative;
+  width: 100%;
+  padding-bottom: 28px;
+}
+
+.lk-header-bg {
+  position: absolute;
+  top: 62px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #43B8B4 0%, #2A8C88 45%, #1E5250 100%);
+  border-radius: 20px;
+  z-index: 0;
+}
+
+.lk-header > *:not(.lk-header-bg) {
+  position: relative;
+  z-index: 1;
 }
 
 .lk-logo {
@@ -167,6 +186,10 @@
   box-shadow: 0 6px 28px rgba(30, 82, 80, 0.28);
   position: relative;
   overflow: hidden;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .lk-card--primary::after {
@@ -290,6 +313,12 @@
   .lk-card-title { font-size: 15px; }
 }
 
+
+/* Footer arredondado na página de links */
+.links-page .site-footer {
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .lk-header,
