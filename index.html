@@ -731,7 +731,7 @@
       <p class="site-footer-copy">© <span id="footer-year"></span> - Dr Guilherme Pillar. Todos os direitos reservados.</p>
 
       <a href="https://samuelpadua.com.br/" class="site-footer-credit" target="_blank" rel="noopener" aria-label="Design e Desenvolvimento por Samuel Pádua Web Designer">
-        <span class="site-footer-credit-text">Design e Desenvolvimento por:</span>
+        <span class="site-footer-credit-text">Design e Desenvolvimento:</span>
         <img src="logo-samuel.svg" alt="Samuel Pádua Web Designer" class="site-footer-credit-logo">
       </a>
     </div>
@@ -956,6 +956,87 @@
             setOpenState(currentItem, false);
           });
           setOpenState(item, willOpen);
+        });
+      });
+    })();
+
+    (function () {
+      var revealGroups = [
+        { selector: '.intro-left', effect: 'left' },
+        { selector: '.intro-right', effect: 'right' },
+        { selector: '.treatment-header', effect: 'up' },
+        { selector: '.cards-grid .card', effect: 'zoom', stagger: 90 },
+        { selector: '.treatment-footer', effect: 'up', delay: 140 },
+        { selector: '.problems-img-col', effect: 'left' },
+        { selector: '.problems-headline', effect: 'up', delay: 60 },
+        { selector: '.problems-body', effect: 'right', delay: 120 },
+        { selector: '.reviews-header', effect: 'up' },
+        { selector: '.reviews-carousel', effect: 'zoom', delay: 80 },
+        { selector: '.reviews-pagination', effect: 'up', delay: 140 },
+        { selector: '.reviews-footer', effect: 'up', delay: 180 },
+        { selector: '.profile-media', effect: 'left' },
+        { selector: '.profile-content', effect: 'right', delay: 70 },
+        { selector: '.faq-header', effect: 'up' },
+        { selector: '.faq-item', effect: 'up', stagger: 80 },
+        { selector: '.faq-footer', effect: 'up', delay: 140 },
+        { selector: '.contact-header', effect: 'up' },
+        { selector: '.contact-cards .contact-card', effect: 'zoom', stagger: 90 },
+        { selector: '.contact-brand', effect: 'up', delay: 150 },
+        { selector: '.contact-map-wrap', effect: 'right', delay: 80 },
+        { selector: '.site-footer-inner', effect: 'up' }
+      ];
+      var elements = [];
+      var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function registerReveal(node, effect, delay) {
+        if (!node || node.classList.contains('reveal-item')) return;
+        node.classList.add('reveal-item');
+        node.setAttribute('data-reveal', effect || 'up');
+        node.style.setProperty('--reveal-delay', (delay || 0) + 'ms');
+        elements.push(node);
+      }
+
+      revealGroups.forEach(function (group) {
+        var nodes = Array.from(document.querySelectorAll(group.selector));
+        nodes.forEach(function (node, index) {
+          registerReveal(node, group.effect, (group.delay || 0) + ((group.stagger || 0) * index));
+        });
+      });
+
+      Array.from(document.querySelectorAll('.condition-block')).forEach(function (block, index) {
+        var media = block.querySelector('.condition-media');
+        var text = block.querySelector('.condition-text');
+        var mediaEffect = index % 2 === 0 ? 'left' : 'right';
+        var textEffect = index % 2 === 0 ? 'right' : 'left';
+        registerReveal(media, mediaEffect, 0);
+        registerReveal(text, textEffect, 70);
+      });
+
+      if (!elements.length) return;
+
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        elements.forEach(function (element) {
+          element.classList.add('is-visible');
+        });
+        return;
+      }
+
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            });
+          }, {
+            threshold: 0.16,
+            rootMargin: '0px 0px -10% 0px'
+          });
+
+          elements.forEach(function (element) {
+            observer.observe(element);
+          });
         });
       });
     })();
