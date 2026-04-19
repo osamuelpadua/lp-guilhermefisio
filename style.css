@@ -729,9 +729,12 @@ body::-webkit-scrollbar-thumb:hover {
   .subtext { font-size: 14px; }
 
   .btn-cta {
-    font-size: 12px;
-    padding: 15px 28px;
+    height: 60px;
+    padding: 0 24px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
     align-self: stretch;
+    justify-content: center;
     text-align: center;
   }
 
@@ -1973,6 +1976,10 @@ body::-webkit-scrollbar-thumb:hover {
   .reviews-footer .btn-cta,
   .faq-footer .btn-cta {
     align-self: center;
+    height: 64px;
+    padding: 0 32px;
+    font-size: 14px;
+    letter-spacing: 0.15em;
   }
 
   .intro-inner,
@@ -2117,11 +2124,20 @@ body::-webkit-scrollbar-thumb:hover {
     height: 60px;
     width: 100%;
     justify-content: center;
-    font-size: 11px;
-    letter-spacing: 0.14em;
+    font-size: 13px;
+    letter-spacing: 0.12em;
     border-radius: 14px;
     padding: 0 24px;
     margin-bottom: 16px;
+  }
+
+  .condition-text .btn-cta,
+  .reviews-footer .btn-cta,
+  .faq-footer .btn-cta {
+    height: 60px;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    padding: 0 24px;
   }
 
   .crefito {
