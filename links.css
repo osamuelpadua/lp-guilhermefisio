@@ -294,6 +294,11 @@
 
 
 
+/* Footer centralizado na página de links */
+.links-page .site-footer-inner {
+  justify-content: center;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .lk-header,
   .lk-card {
