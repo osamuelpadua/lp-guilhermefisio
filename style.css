@@ -2019,18 +2019,18 @@ body::-webkit-scrollbar-thumb:hover {
   }
 
   .review-card {
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .rc-header,
   .rc-stars {
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   .rc-info,
   .rc-text {
-    text-align: center;
+    text-align: left;
   }
 
   .reviews-cta-text,

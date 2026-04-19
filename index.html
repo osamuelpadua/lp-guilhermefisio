@@ -933,6 +933,27 @@
       window.addEventListener('resize', init);
       track.addEventListener('mouseenter', stopAutoPlay);
       track.addEventListener('mouseleave', startAutoPlay);
+
+      var touchStartX = 0;
+      var touchStartY = 0;
+      var isDragging = false;
+      viewport.addEventListener('touchstart', function (e) {
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        isDragging = true;
+        stopAutoPlay();
+      }, { passive: true });
+      viewport.addEventListener('touchend', function (e) {
+        if (!isDragging) return;
+        isDragging = false;
+        var dx = e.changedTouches[0].clientX - touchStartX;
+        var dy = e.changedTouches[0].clientY - touchStartY;
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+          stepBy(dx < 0 ? 1 : -1);
+        }
+        restartAutoPlay();
+      }, { passive: true });
+
       init();
     })();
 
