@@ -1097,7 +1097,7 @@ body::-webkit-scrollbar-thumb:hover {
   .reviews-carousel { padding: 0 34px; }
   .reviews-pagination { gap: 10px; }
   .carousel-btn { display: none; }
-  .rc-text { text-align: center; }
+  .rc-text { text-align: left; }
   .carousel-btn svg { width: 36px; height: 36px; }
 }
 
